@@ -328,7 +328,7 @@
         <div class="container">
             <div class="form-container">
                 <div class="signin-signup">
-                    <form action="" class="login_form">
+                    <form action="{{ route('login-progress') }}" method="POST"class="login_form">
                         <h2 class="title">Đăng nhập tài khoản</h2>
                         <div class="input-field">
                             <i class="far fa-user"></i>
@@ -352,13 +352,7 @@
                             </a>
                         </div>
                     </form>
-                    <form action="{{route('user-progress')}}" method="POST" class="signup_form">
-                        @if(Session::has('done'))
-                        <div class="alert alert-success">{{Session::get('done')}}</div>
-                        @endif
-                        @if(Session::has('fail'))
-                        <div class="alert alert-success">{{Session::get('fail')}}</div>
-                        @endif
+                    <form action="{{ route('register-user') }}" method="POST" class="signup_form">
                         @csrf
                         <h2 class="title">Đăng ký tài khoản</h2>
                         <div class="input-field">

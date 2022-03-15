@@ -19,4 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/account', [AccountController::class,'account']);
-Route::post('/user-progress', [AccountController::class,'account_even']) -> name('user-progress');
+Route::get('/main', [AccountController::class,'mainpage']);
+Route::post('/register-user', [AccountController::class,'registerUser']) -> name('register-user');
+Route::post('/loginprogress', [AccountController::class,'login_function']) -> name('login-progress');
+Route::post('/logout', [AccountController::class,'logout_function']) -> name('logout');
