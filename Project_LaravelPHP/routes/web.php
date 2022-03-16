@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/account', [AccountController::class,'account']);
-Route::get('/main', [AccountController::class,'mainpage']);
+Route::get('/register', [AccountController::class,'account']);
+//Route::get('/main', [AccountController::class,'mainpage']);
 Route::post('/register-user', [AccountController::class,'registerUser']) -> name('register-user');
 Route::post('/login-progress', [AccountController::class,'login_function']) -> name('login-progress');
 Route::post('/logout', [AccountController::class,'logout_function']) -> name('logout');
