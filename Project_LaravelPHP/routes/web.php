@@ -21,5 +21,7 @@ Route::get('/', function () {
 
 Route::get('/login',[AccountController::class,'login']);
 Route::get('/register',[AccountController::class,'register']);
+Route::get('/main',[AccountController::class,'main']);
 
 Route::post('/register-progress', [AccountController::class, 'register_controller']) -> name('register-progress');
+Route::post('/login-progress', [AccountController::class, 'login_controller']) -> name('login-progress');

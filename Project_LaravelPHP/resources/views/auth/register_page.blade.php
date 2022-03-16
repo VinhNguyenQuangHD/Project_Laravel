@@ -234,10 +234,13 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="img/bg.svg">
+            <img src="/resources/views/img/img1.png" alt="hinh anh"/>
 		</div>
 		<div class="login-content">
 			<form action="{{route('register-progress')}}" method="POST">
+                
+				<img src="img/avatar.svg">
+				<h2 class="title">Welcome</h2>
                 @if(Session::get('success'))
                 <h1 >{{Session::get('success')}}</h1>
                 @endif
@@ -245,15 +248,13 @@
                 <h1 >{{Session::get('fail')}}</h1>
                 @endif
                 @csrf
-				<img src="img/avatar.svg">
-				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
            		   		<h5>Tên đăng nhập</h5>
-           		   		<input type="text" class="input" value="{{ old('username') }}">
+           		   		<input type="text" class="input" name="username" >
            		   </div>
            		</div>
                    <div class="input-div email">
@@ -262,7 +263,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Email</h5>
-           		   		<input type="text" class="input "value="{{ old('email') }}">
+           		   		<input type="email" class="input" name="email" >
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -271,7 +272,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Mật khẩu</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" name="password" class="input">
             	   </div>
             	</div>
                 <div class="input-div pass">

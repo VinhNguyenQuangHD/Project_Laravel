@@ -234,19 +234,24 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="<?= asset('/resources/img/img1.png') ?>" alt="hình nền">
+			<img src="<?php echo asset('/storage/app/public/img/img1.png',null)?>" alt="hình nền">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
-				<img src="/resources/img/imgprofile.png" alt="hình đại diện">
+			<form action="{{route('login-progress')}}" method="POST">
+                
+				<img src="<?php echo asset("/resources/views/img/imgprofile.png")?>" alt="hình đại diện">
 				<h2 class="title">Welcome</h2>
+                @if(Session::get('fail'))
+                <h1 >{{Session::get('fail')}}</h1>
+                @endif
+                @csrf
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
            		   		<h5>Tên đăng nhập</h5>
-           		   		<input type="text" class="input">
+           		   		<input type="text" class="input" name="username">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -255,7 +260,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Mật khẩu</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" class="input" name="password">
             	   </div>
             	</div>
             	<a href="#">Quên mật khẩu?</a>
