@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Account;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ Route::get('/', function () {
 Route::get('/login',[AccountController::class,'login']);
 Route::get('/register',[AccountController::class,'register']);
 Route::get('/main',[AccountController::class,'main']);
+Route::get('/profile',[ProfileController::class,'profile']);
 
 Route::post('/register-progress', [AccountController::class, 'register_controller']) -> name('register-progress');
 Route::post('/login-progress', [AccountController::class, 'login_controller']) -> name('login-progress');

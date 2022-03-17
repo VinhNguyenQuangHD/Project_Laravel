@@ -234,7 +234,7 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="<?php echo asset('/storage/app/public/img/img1.png',null)?>" alt="hình nền">
+			<img src="./img1.png" alt="hình nền">
 		</div>
 		<div class="login-content">
 			<form action="{{route('login-progress')}}" method="POST">
