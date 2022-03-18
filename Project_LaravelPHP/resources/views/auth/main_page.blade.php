@@ -191,7 +191,7 @@
                 <a href="#" class="active">GALERRY</a>
                 <a href="#">ABOUT</a>
                 <a href="#">CREDIT</a>
-                <a href="#">ADMIN PAGE</a>
+                <a href="admin">ADMIN PAGE</a>
             </ul>
         </header>
         <section>

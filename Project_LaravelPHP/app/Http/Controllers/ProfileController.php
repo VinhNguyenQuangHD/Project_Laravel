@@ -11,6 +11,15 @@ class ProfileController extends Controller
         return view ('auth.profile_page');
     }
 
+    public function admin(){
+        return view('auth.admin_main_profile');
+    }
+
+    public function show_data(){
+        $profiles = Profile::all();
+        return view('admin_main_profile') -> with('profile',$profiles);
+    }
+
     public function create(Request $req){
         $req -> validate([
             'username' => 'required',

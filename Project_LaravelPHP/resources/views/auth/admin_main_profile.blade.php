@@ -64,6 +64,30 @@
                 <a href="#">CREDIT</a>
             </ul>
     </header>
+    <a href="create" class="btn btn-success btn-sm" title="Add New Contact">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                        </a>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Link</th>
+                <th>Age</th>
+                <th>Types</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($profiles as $item)
+                <td>{{$item -> username}}</td>
+                <td>{{$item -> email}}</td>
+                <td>{{$item -> link}}</td>
+                <td>{{$item -> age}}</td>
+                <td>{{$item -> type}}</td>
+            @endforeach
+        </tbody>
+    </table>
+    
     
 </body>
 </html>
