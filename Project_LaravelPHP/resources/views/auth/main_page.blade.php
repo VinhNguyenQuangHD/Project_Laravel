@@ -112,63 +112,74 @@
                 font-size: 1.5em;
                 color: #fff;
             }
-            .container{
-                position: relative;
-                width: 100%;
-                display: flex;
-                justify-content: center;
+            .main{
+                font-size: 16px;
+                margin: 0;
+                margin-top: 10px;
+                background: transparent;
+                display: flexbox;
                 align-items: center;
-                flex-wrap: wrap;
-                padding: 30px;
-
+                justify-content: space-around;
+                min-height: 50vh;
             }
-            .container .card{
-                max-width: 500px;
-                height: 190px;
-                background: #fff;
-                margin: 30px 10px;
-                padding: 20px 15px; 
-                display: flex;
-                flex-direction: column;
-                border-radius: 4px;
-                box-shadow: 0 5px 202px rgba(0,0,0,0.5);
-                transition: 0.3s ease-in-out;
-            }
-            .container .card:hover{
-                height: 300px;
-
-            }
-            .container .card .imgDisplay{
-                position: relative;
-                width: 300px;
-                height: 300px;
-                top: -50px;
-                left: 0px;
-                z-index: 1;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0,2);
-            }
-            .container .card .imgDisplay img{
+            img{
+                object-fit: cover;
                 max-width: 100%;
-                border-radius: 4px;
             }
-            .container .card .post_information{
-                position: relative;
-                margin-top: -140px;
-                padding: 10px 15px;
-                text-align-last: center;
-                color: #111;
-                visibility: hidden;
-                opacity: 0;
-                transition: 0.3 ease-in-out;
-            } 
-            .container .card:hover .post_information{
-                visibility: visible;
+            .ui-ux{
+                width: 400px;
+                background: radial-gradient(#111 50%, #000 100%);
+                overflow: hidden;
+            }
+            .ui-ux img{
+                transform: scale(1.3);
+                transition: all 0.3s ease-out;
+            }
+            .ui-ux:hover .descr h3{
                 opacity: 1;
-                margin-top: -40px;
-                transition-delay: 0.3s;
             }
-            .container .card .post_information p{
-                color: #111;
+            .ui-ux:hover .descr p{
+                opacity: 1;
+            }
+            .ui-ux:hover .descr a{
+                opacity: 1;
+            }
+            .ui-ux:hover img{
+                transform: scale(1.1) translateY(-20px);
+                transition: all 0.3 ease-out;
+                opacity: 0.3;
+            }
+            .descr{
+                position: relative;
+                left: 0; bottom: 0;
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+                color: #fff;
+                font-size: 15px;
+            }
+            .descr h3{
+                font-weight: 700;
+                font-size: 32px;
+                margin: 0 0 20px;
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            .descr a{
+                color: #fff;
+                background: #34aff3;
+                display: inline-block;
+                padding: 10px 25px;
+                text-decoration: none;
+                border-radius: 5px;
+                opacity: 0;
+            }
+            .descr a:hover{
+                background: #0e6290;
+            }
+            .descr p{
+                /*transform: translateY(30px);*/
+                opacity: 0;
             }
         </style>
     </head>
@@ -180,6 +191,7 @@
                 <a href="#" class="active">GALERRY</a>
                 <a href="#">ABOUT</a>
                 <a href="#">CREDIT</a>
+                <a href="#">ADMIN PAGE</a>
             </ul>
         </header>
         <section>
@@ -192,35 +204,13 @@
         <div class="sec">
             <h3>What's new !!</h3>
             <p>Some thing verry special is comming in, prepare for it</p>
-            <div class="container">
-                <div class="card">
-                    <div class="imgDisplay">
-                        <img src="https://img.freepik.com/free-photo/blue-morning-natural-mountains-bamboo_1417-32.jpg?t=st=1647524965~exp=1647525565~hmac=d8c409bb1a93d2d8c3fa233693ee4bba07352163ae7d87c9947fc336e6e37a1a" alt="hinh hien thi">
-                    </div>
-                    <div class="post_information">
-                        <h2>#Ten anh</h2>
-                        <p>#Tentacgia</p>
-                        <a href="#">Watch more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="imgDisplay">
-                        <img src="https://img.freepik.com/free-photo/blue-morning-natural-mountains-bamboo_1417-32.jpg?t=st=1647524965~exp=1647525565~hmac=d8c409bb1a93d2d8c3fa233693ee4bba07352163ae7d87c9947fc336e6e37a1a" alt="hinh hien thi">
-                    </div>
-                    <div class="post_information">
-                        <h2>#Ten anh</h2>
-                        <p>#Tentacgia</p>
-                        <a href="#">Watch more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="imgDisplay">
-                        <img src="https://img.freepik.com/free-photo/blue-morning-natural-mountains-bamboo_1417-32.jpg?t=st=1647524965~exp=1647525565~hmac=d8c409bb1a93d2d8c3fa233693ee4bba07352163ae7d87c9947fc336e6e37a1a" alt="hinh hien thi">
-                    </div>
-                    <div class="post_information">
-                        <h2>#Ten anh</h2>
-                        <p>#Tentacgia</p>
-                        <a href="#">Watch more</a>
+            <div class="main">
+                <div class="ui-ux">
+                    <img src="https://img.freepik.com/free-photo/mountain-journey_1163-3320.jpg?t=st=1647623186~exp=1647623786~hmac=a55857bb7926978fe71bedc0c556504aa747ae186fd9bdf9f8c635e44deccdca" alt="img">
+                    <div class="descr">
+                        <h3>Tieu_de</h3>
+                        <p>#Tac gia</p>
+                        <a href="#">Xem them</a>
                     </div>
                 </div>
             </div>
