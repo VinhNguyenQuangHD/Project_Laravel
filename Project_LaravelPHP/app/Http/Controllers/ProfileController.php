@@ -12,7 +12,12 @@ class ProfileController extends Controller
     }
 
     public function admin(){
-        return view('auth.admin_main_profile');
+        $data = Profile::all();
+        return view('auth.admin_main_profile',['profiles' => $data]);
+    }
+
+    public function admin_create_view(){
+        return view ('auth.admin_main_profile_create');
     }
 
     public function show_data(){
@@ -24,9 +29,9 @@ class ProfileController extends Controller
         $req -> validate([
             'username' => 'required',
             'email' => 'required|email|unique:profiles',
-            'socialnetwork' => 'required',
-            'ages' => 'required',
-            'type' => 'required',
+            'socialnetwork' => 'required|max:170',
+            'ages' => 'required|integer',
+            'type' => 'required|max:10',
         ]);
 
         $profile = new Profile();

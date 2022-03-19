@@ -26,5 +26,8 @@ Route::get('/main',[AccountController::class,'main']);
 Route::get('/profile',[ProfileController::class,'profile']);
 Route::get('/admin',[ProfileController::class,'admin']);
 
+Route::get('/admin-create',[ProfileController::class,'admin_create_view']);
+Route::post('/admin-create-progress',[ProfileController::class,'create']) -> name('admin-create-progress');
+
 Route::post('/register-progress', [AccountController::class, 'register_controller']) -> name('register-progress');
 Route::post('/login-progress', [AccountController::class, 'login_controller']) -> name('login-progress');

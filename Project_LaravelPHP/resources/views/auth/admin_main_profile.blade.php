@@ -52,6 +52,56 @@
                 background: #fff;
                 color: #2b1055;
             }
+            section{
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                padding: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            section::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, #1c0522,transparent);
+                z-index: 10;
+            }
+            .container{
+                z-index: 20;
+            }
+            table{
+                border-spacing: 0px;
+                width: 100%;
+                z-index: 15;
+            }
+
+            .table td, .table th{
+                padding: .75em;
+                vertical-align: top;
+                text-align: center;
+                border-top: 1px solid var(--border);
+            }
+
+            .table td > a.btn{
+                padding: .3em 1em;
+                font-size: 1.1em;
+                margin: 0 .2em;
+            }
+
+
+            .table tr:hover td > a{
+                box-shadow: none;
+            }
+
+            .table .thead-dark th{
+                color: #fff;
+                background-color: var(--dark) ;
+                border-color: #32383e;
+            }
     </style>
 </head>
 <body>
@@ -64,30 +114,44 @@
                 <a href="#">CREDIT</a>
             </ul>
     </header>
-    <a href="create" class="btn btn-success btn-sm" title="Add New Contact">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-    <table>
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Link</th>
-                <th>Age</th>
-                <th>Types</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($profiles as $item)
-                <td>{{$item -> username}}</td>
-                <td>{{$item -> email}}</td>
-                <td>{{$item -> link}}</td>
-                <td>{{$item -> age}}</td>
-                <td>{{$item -> type}}</td>
-            @endforeach
-        </tbody>
-    </table>
+    <section>
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="admin-create" class="border-shadow">
+                    <span class="text-gradient">New User <i class="fas fa-user"></i></span>
+                </a>
+            </div>
+            <form action="" method="">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Social Link</th>
+                            <th>Ages</th>
+                            <th>Types</th>
+                            <th>Update/Delete</th>
+                        </tr>
+                    </thead>
+                    @foreach($profiles as $value)
+                        <tbody>
+                            <th>{{$value['username']}}</th>
+                            <th>{{$value['email']}}</th>
+                            <th>{{$value['socialnetwork']}}</th>
+                            <th>{{$value['ages']}}</th>
+                            <th>{{$value['type']}}</th>
+                            <th></th>
+                        </tbody>
+                    @endforeach
+
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </form>
+        </div>
     
-    
+    </section>
+        
 </body>
 </html>

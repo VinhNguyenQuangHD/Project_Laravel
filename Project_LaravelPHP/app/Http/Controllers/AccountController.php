@@ -20,6 +20,8 @@ class AccountController extends Controller
         return view ('auth.main_page');
     }
 
+    
+
     public function register_controller(Request $req){
         $req -> validate([
             'username' => 'required',
