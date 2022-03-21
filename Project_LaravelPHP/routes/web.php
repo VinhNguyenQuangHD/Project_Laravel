@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/login',[AccountController::class,'login']);
 Route::get('/register',[AccountController::class,'register']);
-Route::get('/main',[AccountController::class,'main']);
+Route::get('/main/{id}',[AccountController::class,'main']);
 Route::get('/profile',[ProfileController::class,'profile']);
 Route::get('/admin',[ProfileController::class,'admin']);
 

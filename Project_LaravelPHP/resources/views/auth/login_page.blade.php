@@ -234,13 +234,13 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="./img1.png" alt="hình nền">
+			<img src="/storage/img/img1.png" alt="hình nền">
 		</div>
 		<div class="login-content">
 			<form action="{{route('login-progress')}}" method="POST">
                 
-				<img src="<?php echo asset("/resources/views/img/imgprofile.png")?>" alt="hình đại diện">
-				<h2 class="title">Welcome</h2>
+				<img src="/storage/img/imgprofile.png" alt="hình đại diện">
+				<h2 class="title">Login</h2>
                 @if(Session::get('fail'))
                 <h1 >{{Session::get('fail')}}</h1>
                 @endif
@@ -265,7 +265,7 @@
             	</div>
             	<a href="#">Quên mật khẩu?</a>
                 
-            	<input type="submit" class="btn" value="Login">
+            	<input type="submit" class="btn" value="Đăng nhập">
                 <a href="register">Bạn chưa có tài khoản, đăng ký ở đây</a>
             </form>
         </div>

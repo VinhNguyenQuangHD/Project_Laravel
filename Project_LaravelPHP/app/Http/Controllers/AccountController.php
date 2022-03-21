@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
@@ -16,7 +17,7 @@ class AccountController extends Controller
         return view ('auth.register_page');
     }
 
-    public function main(){
+    public function main(Request $req){
         return view ('auth.main_page');
     }
 
@@ -52,7 +53,9 @@ class AccountController extends Controller
         }else{
             if(Hash::check($req -> password, $user_infor -> password)){
                 $req -> session() -> put('LogUser', $user_infor -> id);
-                return redirect ('/main');
+                $data =  Account::find($user_infor -> id);
+                return view('auth.main_page',['account' => $data]);
+                //return redirect ('/main',['account', $user_infor]);
             }else{
                 return back() -> with('fail', 'Password invalid (wrong pas, etc... !!');
             }

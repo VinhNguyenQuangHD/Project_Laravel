@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Create user</h2>
+    <h2>Update user</h2>
     <form action="{{route('admin-update-progress')}}" method="POST">
         @if(Session::get('success'))
                 <h1 >{{Session::get('success')}}</h1>

@@ -234,13 +234,13 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-            <img src="/resources/views/img/img1.png" alt="hinh anh"/>
+            <img src="/storage/img/registerimg.png" alt="hinh anh"/>
 		</div>
 		<div class="login-content">
 			<form action="{{route('register-progress')}}" method="POST">
                 
-				<img src="img/avatar.svg">
-				<h2 class="title">Welcome</h2>
+				<img src="storage/img/imgprofile.png">
+				<h2 class="title">Register</h2>
                 @if(Session::get('success'))
                 <h1 >{{Session::get('success')}}</h1>
                 @endif

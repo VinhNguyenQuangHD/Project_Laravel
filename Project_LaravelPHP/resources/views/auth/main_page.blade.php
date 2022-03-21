@@ -43,6 +43,7 @@
                 text-decoration: none;
                 padding: 6px 15px ;
                 color: #fff;
+                text-transform: uppercase;
                 border-radius: 20px;
             }
             header ul a:hover, header ul a .active {
@@ -184,10 +185,11 @@
         </style>
     </head>
     <body>
+    <input hidden name="id" value="{{$account['id']}}">
         <header>
             <a href="main" class="logo">LOGO</a>
             <ul>
-                <a href="profile">PROFILE</a>
+                <a href="profile">{{$account['username']}}</a>
                 <a href="#" class="active">GALERRY</a>
                 <a href="#">ABOUT</a>
                 <a href="#">CREDIT</a>
@@ -195,11 +197,11 @@
             </ul>
         </header>
         <section>
-            <img src="/storage/app/public/img/stars.png" alt="img" id="stars">
-            <img src="./mountains_behind.png" alt="img" id="mountains_behind">
+            <img src="/storage/img/stars.png" alt="img" id="stars">
+            <img src="/storage/img/mountains_behind.png" alt="img" id="mountains_behind">
             <h2 id="text">Main page</h2>
             <a href="#" class="btn" id="btn">Looking for more</a>
-            <img src="./mountains_front.png" alt="img" id="mountains_front">
+            <img src="/storage/img/mountains_front.png" alt="img" id="mountains_front">
         </section>
         <div class="sec">
             <h3>What's new !!</h3>
