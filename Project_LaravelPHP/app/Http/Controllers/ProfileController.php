@@ -25,6 +25,12 @@ class ProfileController extends Controller
         return view('admin_main_profile') -> with('profile',$profiles);
     }
 
+    public function admin_update_view($id){
+        
+        $data =  Profile::find($id);
+        return view('auth.admin_main_profile_update',['profile' => $data]);
+    }
+
     public function create(Request $req){
         $req -> validate([
             'username' => 'required',
@@ -53,26 +59,25 @@ class ProfileController extends Controller
         
     }
 
-    public function update(Request $req, Profile $profile){
-        $req -> validate([
-            'username' => 'required',
-            'email' => 'required|email|unique:profiles',
-            'socialnetwork' => 'required|max:100',
-            'ages' => 'required|integer',
-            'type' => 'required|max:50',
-        ]);
+    public function update(Request $req){
+        $data = Profile::find($req->id);
+        $data->username = $req->username;
+        $data->email = $req->email;
+        $data->socialnetwork = $req->socialnetwork;
+        $data->ages = $req->ages;
+        $data->type = $req->type;
+        $data->save();
 
-        $profile -> username = $req -> username;
-        $profile -> email = $req -> email;
-        $profile -> socialnetwork = $req -> socialnetwork;
-        $profile -> ages = $req -> ages;
-        $profile -> type = $req -> type;
-        $profile -> save();
-        return 0;
+        $data2 = Profile::all();
+        return view('auth.admin_main_profile',['profiles' => $data2]);
     }
 
-    public function delete(){
-        
+    public function delete($id){
+        $data = Profile::find($id);
+        $data -> delete();
+
+        $data2 = Profile::all();
+        return view('auth.admin_main_profile',['profiles' => $data2]);
     }
 
     public function search(){

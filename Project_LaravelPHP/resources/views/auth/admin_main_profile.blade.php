@@ -140,7 +140,8 @@
                             <th>{{$value['socialnetwork']}}</th>
                             <th>{{$value['ages']}}</th>
                             <th>{{$value['type']}}</th>
-                            <th></th>
+                            <th><a href="admin-update/{{$value['id']}}">Update</a></th>
+                            <th><a href="admin-delete/{{$value['id']}}">Delete</a></th>
                         </tbody>
                     @endforeach
 

@@ -28,6 +28,9 @@ Route::get('/admin',[ProfileController::class,'admin']);
 
 Route::get('/admin-create',[ProfileController::class,'admin_create_view']);
 Route::post('/admin-create-progress',[ProfileController::class,'create']) -> name('admin-create-progress');
+Route::get('/admin-update/{id}',[ProfileController::class,'admin_update_view']);
+Route::get('/admin-delete/{id}',[ProfileController::class,'delete']);
+Route::post('/admin-update-progress',[ProfileController::class,'update']) -> name('admin-update-progress');
 
 Route::post('/register-progress', [AccountController::class, 'register_controller']) -> name('register-progress');
 Route::post('/login-progress', [AccountController::class, 'login_controller']) -> name('login-progress');

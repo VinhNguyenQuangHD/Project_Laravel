@@ -9,4 +9,5 @@ use Illuminate\Notifications\Notifiable;
 class Profile extends Model
 {
     use HasFactory, Notifiable;
+    public $timestamp = false;
 }
