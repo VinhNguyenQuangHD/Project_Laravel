@@ -113,74 +113,58 @@
                 font-size: 1.5em;
                 color: #fff;
             }
-            .main{
-                font-size: 16px;
-                margin: 0;
-                margin-top: 10px;
-                background: transparent;
-                display: flexbox;
-                align-items: center;
-                justify-content: space-around;
-                min-height: 50vh;
-            }
-            img{
-                object-fit: cover;
-                max-width: 100%;
-            }
-            .ui-ux{
-                width: 400px;
-                background: radial-gradient(#111 50%, #000 100%);
-                overflow: hidden;
-            }
-            .ui-ux img{
-                transform: scale(1.3);
-                transition: all 0.3s ease-out;
-            }
-            .ui-ux:hover .descr h3{
-                opacity: 1;
-            }
-            .ui-ux:hover .descr p{
-                opacity: 1;
-            }
-            .ui-ux:hover .descr a{
-                opacity: 1;
-            }
-            .ui-ux:hover img{
-                transform: scale(1.1) translateY(-20px);
-                transition: all 0.3 ease-out;
-                opacity: 0.3;
-            }
-            .descr{
+            .container{
                 position: relative;
-                left: 0; bottom: 0;
-                width: 100%;
-                padding: 10px;
-                text-align: center;
-                color: #fff;
-                font-size: 15px;
+                width: 1100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 30px;
             }
-            .descr h3{
-                font-weight: 700;
-                font-size: 32px;
-                margin: 0 0 20px;
-                transform: translateY(30px);
+            .container .card{
+                max-width: 550px;
+                position: relative;
+                height: 260px;
+                background: #fff;
+                margin: 30px 10px;
+                padding: 20px 15px;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+                transition: 0.3s ease-in-out;
+            }
+            .container .card:hover{
+                height: 400px;
+            }
+            .container .card .img_box{
+                position: relative;
+                width: 450px;
+                /*height: 450px;*/
+                top: -40px;
+                left: 0px;
+                z-index: 1;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            }
+            .container .card .img_box img{
+                max-width: 100%;
+                border-radius: 4px;
+            }
+            .container .card .descr{
+                position: relative;
+                margin-top: -140px;
+                padding: 10px 15px;
+                text-align: right;
+                color: #111;
+                visibility: hidden;
                 opacity: 0;
+                transition: 0.3s ease-in-out;
             }
-            .descr a{
-                color: #fff;
-                background: #34aff3;
-                display: inline-block;
-                padding: 10px 25px;
-                text-decoration: none;
-                border-radius: 5px;
-                opacity: 0;
-            }
-            .descr a:hover{
-                background: #0e6290;
-            }
-            .descr p{
-                /*transform: translateY(30px);*/
-                opacity: 0;
+            .container .card:hover .descr{
+                visibility: visible;
+                opacity: 1;
+                margin-top: -40px;
+                transition-delay: 0.3s;  
             }
         </style>
     </head>
@@ -190,7 +174,7 @@
             <a href="main" class="logo">LOGO</a>
             <ul>
                 <a href="profile">{{$account['username']}}</a>
-                <a href="#" class="active">GALERRY</a>
+                <a href="upload" class="active">GALERRY</a>
                 <a href="#">ABOUT</a>
                 <a href="#">CREDIT</a>
                 <a href="admin">ADMIN PAGE</a>
@@ -206,11 +190,13 @@
         <div class="sec">
             <h3>What's new !!</h3>
             <p>Some thing verry special is comming in, prepare for it</p>
-            <div class="main">
-                <div class="ui-ux">
-                    <img src="https://img.freepik.com/free-photo/mountain-journey_1163-3320.jpg?t=st=1647623186~exp=1647623786~hmac=a55857bb7926978fe71bedc0c556504aa747ae186fd9bdf9f8c635e44deccdca" alt="img">
+            <div class="container">
+                <div class="card">
+                    <div class="img_box">
+                        <img src="https://img.freepik.com/free-photo/mountain-journey_1163-3320.jpg?t=st=1647623186~exp=1647623786~hmac=a55857bb7926978fe71bedc0c556504aa747ae186fd9bdf9f8c635e44deccdca" alt="img">
+                    </div>
                     <div class="descr">
-                        <h3>Tieu_de</h3>
+                        <h4>Tieu_de</h4>
                         <p>#Tac gia</p>
                         <a href="#">Xem them</a>
                     </div>

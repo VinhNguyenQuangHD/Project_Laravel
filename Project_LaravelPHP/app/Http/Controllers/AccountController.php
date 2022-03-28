@@ -35,7 +35,7 @@ class AccountController extends Controller
         $acc -> password = Hash::make($req -> password) ;
         $res = $acc->save();
         if($res){
-            return back()-> with('success','Error');
+            return back()-> with('success','Complete');
         }else{
             return back()-> with('fail','Error');
         }
