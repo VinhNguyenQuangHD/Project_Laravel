@@ -55,7 +55,7 @@ class AccountController extends Controller
                 $req -> session() -> put('LogUser', $user_infor -> id);
                 $data =  Account::find($user_infor -> id);
                 return view('auth.main_page',['account' => $data]);
-                //return redirect ('/main',['account', $user_infor]);
+                //return redirect ('/main');
             }else{
                 return back() -> with('fail', 'Password invalid (wrong pas, etc... !!');
             }
