@@ -3,38 +3,35 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ImageUploadController extends Controller
 {
     public function view_upload_form(){
-        $images = Image::all(); 
-        return view('auth.upload_img',compact('images'));
+        $date = date('d-m-Y');
+        return view('auth.upload_img',['date' => $date]);
     }
 
     public function upload_image(Request $req){
-
-        $req -> validate([
-            'image_name' => 'required',
-            'image_date' => 'required',
-            'image_storage' => 'required|integer',
-        ]);
-
-        $size = $req->file('image')->getSize();
-        $name = $req->file('image')->getClientOriginalName();
-        $date = date('d-m-Y');
-        $req->file('image')->storeAs('/storage/image',$name);
-
-        $image = new Image();
-        $image->image_name = $name;
-        $image->image_storage = $size;
-        $image->image_date = $date;
-        $image->image_user = $req->image_user;
-        $res = $image->save();
-        if($res){
-            return back()->with('complete','Image has been uploaded');
-        }else{
-            return back()->with('fail','Image cannot upload');
+        if($req->hasFile('file')){
+            $req->validate([
+                'image' => 'mimes:jpeg,jpg,png,svg',
+            ]);
+            $req->file->store('image','public');
+            $image = new Image();
+            $image->image = $req->file->hashName();
+            $image->owner = $req->owner;
+            $image->date = date('d-m-Y');
+            $image->type = $req->type;
+            $res = $image->save();
+            if($res){
+                return back()->with('success','Image uploaded');
+            }else{
+                return back()->with('fail','Image corrupted');
+            }
+            
         }
+        return view('auth.upload_img');
     }
 }
