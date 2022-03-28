@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ImageUploadController extends Controller
 {
     public function view_upload_form(){
         $date = date('d-m-Y');
         return view('auth.upload_img',['date' => $date]);
+    }
+
+    public function search(Request $req){
+        $username = $req->username;
+        $data = Image::where('username','like','%'.$username.'%')->get();
+
+        return view('auth.profile',['data',$data]);
     }
 
     public function upload_image(Request $req){

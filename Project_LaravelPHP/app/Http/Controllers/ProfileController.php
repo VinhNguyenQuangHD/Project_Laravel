@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function profile(){
-        return view ('auth.profile_page');
+    public function profile($id){
+        $data =  Profile::find($id);
+        return view('auth.profile_page',['profile' => $data]);
     }
 
     public function admin(){

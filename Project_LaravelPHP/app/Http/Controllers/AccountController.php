@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -53,8 +54,10 @@ class AccountController extends Controller
         }else{
             if(Hash::check($req -> password, $user_infor -> password)){
                 $req -> session() -> put('LogUser', $user_infor -> id);
+                
                 $data =  Account::find($user_infor -> id);
-                return view('auth.main_page',['account' => $data]);
+                $data2 = Image::all();
+                return view('auth.main_page',['account' => $data],['images' => $data2]);
                 //return redirect ('/main');
             }else{
                 return back() -> with('fail', 'Password invalid (wrong pas, etc... !!');

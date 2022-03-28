@@ -123,10 +123,10 @@
                 padding: 30px;
             }
             .container .card{
-                max-width: 550px;
+                max-width: 450px;
                 position: relative;
                 height: 260px;
-                background: #fff;
+                background: transparent;
                 margin: 30px 10px;
                 padding: 20px 15px;
                 display: flex;
@@ -139,7 +139,7 @@
             }
             .container .card .img_box{
                 position: relative;
-                width: 450px;
+                width: 300px;
                 /*height: 450px;*/
                 top: -40px;
                 left: 0px;
@@ -160,6 +160,10 @@
                 opacity: 0;
                 transition: 0.3s ease-in-out;
             }
+            .container .card .descr h4{
+                color: #fff;
+            }
+
             .container .card:hover .descr{
                 visibility: visible;
                 opacity: 1;
@@ -173,9 +177,9 @@
         <header>
             <a href="main" class="logo">LOGO</a>
             <ul>
-                <a href="profile">{{$account['username']}}</a>
-                <a href="upload" class="active">GALERRY</a>
-                <a href="#">ABOUT</a>
+                <a href="profile/{{$account['id']}}">{{$account['username']}}</a>
+                <a href="galery/{{$account['id']}}" class="active">GALERRY</a>
+                <a href="upload">ABOUT</a>
                 <a href="#">CREDIT</a>
                 <a href="admin">ADMIN PAGE</a>
             </ul>
@@ -188,19 +192,21 @@
             <img src="/storage/img/mountains_front.png" alt="img" id="mountains_front">
         </section>
         <div class="sec">
-            <h3>What's new !!</h3>
-            <p>Some thing verry special is comming in, prepare for it</p>
+            <h3>Every thing is under here !!!</h3>
+            <p>Pick what you want :) !!!</p>
             <div class="container">
-                <div class="card">
-                    <div class="img_box">
-                        <img src="https://img.freepik.com/free-photo/mountain-journey_1163-3320.jpg?t=st=1647623186~exp=1647623786~hmac=a55857bb7926978fe71bedc0c556504aa747ae186fd9bdf9f8c635e44deccdca" alt="img">
+                @foreach($images as $value)
+                    <div class="card">
+                        <div class="img_box">
+                            <img src="/storage/image/{{$value['image']}}" alt="img">
+                        </div>
+                        <div class="descr">
+                            <h4>{{$value['owner']}}</h4>
+                            <p>{{$value['date']}}</p>
+                            <a href="#">Xem them</a>
+                        </div>
                     </div>
-                    <div class="descr">
-                        <h4>Tieu_de</h4>
-                        <p>#Tac gia</p>
-                        <a href="#">Xem them</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <script>

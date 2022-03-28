@@ -105,9 +105,14 @@
                 border: 2px solid #2992FE;
                 cursor: pointer;
             }
+            .favorite .title h1{
+                margin-top: 10px;
+                margin-left: 70px;
+            }
     </style>
     </head>
     <body>
+    <input hidden name="id" value="{{$profile['id']}}">
         <header>
             <a href="main" class="logo">LOGO</a>
             <ul>
@@ -122,16 +127,13 @@
                 <img src="https://as1.ftcdn.net/v2/jpg/02/69/35/10/1000_F_269351065_s8XkbMlVAj4leu14hjMhwJ6qaWaCT4yB.jpg" alt="Anh dai dien">
                 <div class="about_text">
                     <h2>Ve ca nhan toi</h2>
-                    <h5>#Hovaten</h5>
-                    <p>#Noi dung ve ban than minh</p>
-                    <button type="submit">Edit profile</button>
+                    <h5>{{$profile['username']}}</h5>
+                    <p>Email: {{$profile['email']}}</p>
+                    <p>Social network link: {{$profile['socialnetwork']}}</p>
+                    <p>Ages: {{$profile['ages']}}</p>
+                    <a href="/admin-update/{{$profile['id']}}">Update profile</a>
                 </div>
             </div>
         </section>
-        <div class="favorite">
-            <div class="title">
-                <h1>Favorite Library</h1>
-            </div>
-        </div>
     </body>
 </html>
