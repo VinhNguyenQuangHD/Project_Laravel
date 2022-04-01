@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin_main_profile_update.css" type="text/css"/>
     <title>Document</title>
 </head>
 <body>
@@ -16,18 +17,45 @@
                 <h1 >{{Session::get('fail')}}</h1>
                 @endif
                 @csrf
+        
         <input hidden name="id" value="{{$profile['id']}}">
-        <h4>Username</h4>
-        <input type="text" name="username" value="{{$profile['username']}}">
-        <h4>Email</h4>
-        <input type="text" name="email" value="{{$profile['email']}}">
-        <h4>Social link</h4>
-        <input type="text" name="socialnetwork" value="{{$profile['socialnetwork']}}">
-        <h4>Ages</h4>
-        <input type="text" name="ages" value="{{$profile['ages']}}">
-        <h4>Types</h4>
-        <input type="text" name="type" value="{{$profile['type']}}">
-        <button type="submit">Update user</button>
+        <div class="form__ChangeInf">
+            <div class="form__Content">
+                <div class="Title__Form">
+                    User name
+                </div>
+                <input type="text" name="username" value="{{$profile['username']}}">
+            </div>
+
+            <div class="form__Content">
+                <div class="Title__Form">
+                Email
+                </div>
+                <input type="text" name="email" value="{{$profile['email']}}">
+            </div>            
+            <div class="form__Content">
+                <div class="Title__Form">
+                Social link
+                </div>
+                <input type="text" name="socialnetwork" value="{{$profile['socialnetwork']}}">
+            </div>
+            <div class="form__Content">
+               <div class="Title__Form">
+               Ages
+                </div>
+                <input type="text" name="ages" value="{{$profile['ages']}}">
+                
+            </div>
+            <div class="form__Content">
+                <div class="Title__Form">
+                Types
+                </div>
+                <input type="text" name="type" value="{{$profile['type']}}">
+            </div>    
+            <div class="form__Content">
+                <input type="submit" value="Submit">
+            </div>                                   
+        </div>
     </form>
 </body>
 </html>
