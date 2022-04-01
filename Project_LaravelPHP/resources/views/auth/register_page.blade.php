@@ -225,6 +225,7 @@
                     justify-content: center;
                 }
             }
+
     </style>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -234,7 +235,11 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
+<<<<<<< Updated upstream
             <img src="/storage/img/registerimg.png" alt="hinh anh"/>
+=======
+            <img src="{{URL('img/img1.png')}}" alt=""/>
+>>>>>>> Stashed changes
 		</div>
 		<div class="login-content">
 			<form action="{{route('register-progress')}}" method="POST">
