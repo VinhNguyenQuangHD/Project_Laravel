@@ -14,12 +14,7 @@ class ImageUploadController extends Controller
         return view('auth.upload_img',['date' => $date]);
     }
 
-    public function search(Request $req){
-        $username = $req->username;
-        $data = Image::where('username','like','%'.$username.'%')->get();
-
-        return view('auth.profile',['data',$data]);
-    }
+   
 
     public function upload_image(Request $req){
         if($req->hasFile('file')){
