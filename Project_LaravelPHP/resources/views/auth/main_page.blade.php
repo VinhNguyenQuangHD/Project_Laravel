@@ -6,9 +6,8 @@
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
         <title>Trang chủ</title>
     </head>
-        <style>
-
-@import  url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+    <style>
+            @import  url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
             *{
                 padding: 0;
                 margin: 0;
@@ -183,58 +182,58 @@
                 padding: 100px;
             }
             div .Title__Content__Second:nth-child(1) {
-    color: white;
-    font-size: 3.5rem;
-    font-weight: 600;
-}
+                color: white;
+                font-size: 3.5rem;
+                font-weight: 600;
+            }
 
-div .Title__Content__Second:nth-child(2) {
-    color: white;
-    margin-top: 10px;
-    font-size: 22px;
-}
+            div .Title__Content__Second:nth-child(2) {
+                color: white;
+                margin-top: 10px;
+                font-size: 22px;
+            }
 
-.produce__Container {
-    width: 300px;
-    height: 340px;
-    position: relative;
-}
+            .produce__Container {
+                width: 300px;
+                height: 340px;
+                position: relative;
+            }
 
-.Img__Produce {
-    overflow: hidden;
-    height: 75%;
-    background: #00000061;
-}
+            .Img__Produce {
+                overflow: hidden;
+                height: 75%;
+                background: #00000061;
+            }
 
-.title__Produce {
-    opacity: 1;
-    transition: 0.5s;
-    padding: 5px;
-}
+            .title__Produce {
+                opacity: 1;
+                transition: 0.5s;
+                padding: 5px;
+            }
 
-.name__Produce {}
+            .name__Produce {}
 
-.title__Produce div {
-    color: whitesmoke;
-    margin: 5px 0px 5px 0px;
-    /* transition: 0.5s; */
-}
-.Img__Produce img {
-    transition: 1s;
-    width: 100%;
-    height: 100%;
-    transform: scale(1);
-}
-.produce__Container:hover .Img__Produce img {
-    transform: scale(1.5);
-    overflow: hidden;
-}
+            .title__Produce div {
+                color: whitesmoke;
+                margin: 5px 0px 5px 0px;
+                /* transition: 0.5s; */
+            }
+            .Img__Produce img {
+                transition: 1s;
+                width: 100%;
+                height: 100%;
+                transform: scale(1);
+            }
+            .produce__Container:hover .Img__Produce img {
+                transform: scale(1.5);
+                overflow: hidden;
+            }
 
-.produce__Container:hover .title__Produce {
-    transition: 0.5s;
-    opacity: 0;
-}
-            </style>
+            .produce__Container:hover .title__Produce {
+                transition: 0.5s;
+                opacity: 0;
+            }
+        </style>
     </head>
     <body>
     <input hidden name="id" value="{{$account['id']}}">
@@ -268,13 +267,13 @@ div .Title__Content__Second:nth-child(2) {
                         <div class="descr">
                             <h4>{{$value['owner']}}</h4>
                             <p>{{$value['date']}}</p>
-                            <a href="#">Xem them</a>
+                            <a href="image/{{$value['id']}}">Xem them</a>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-        <div class="Content__Second">
+        <!--<div class="Content__Second">
             <div class="Title__Content__Second">
             What's new !!
             </div>
@@ -303,7 +302,7 @@ div .Title__Content__Second:nth-child(2) {
                 </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         </div>
         <script>
             let mountaint_behind = document.getElementById('mountains_behind');

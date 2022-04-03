@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -41,3 +42,4 @@ Route::post('/upload-image',[ImageUploadController::class,'upload_image'])->name
 
 Route::get('/galery/{id}',[GaleryController::class,'view_galerry']);
 
+Route::get('/image/{id}',[ImageController::class, 'view_current_image']);
