@@ -43,3 +43,5 @@ Route::post('/upload-image',[ImageUploadController::class,'upload_image'])->name
 Route::get('/galery/{id}',[GaleryController::class,'view_galerry']);
 
 Route::get('/image/{id}',[ImageController::class, 'view_current_image']);
+Route::get('/review/{id}',[ImageController::class,'open_review_form']);
+Route::post('/image-create-review',[ImageController::class,'upload_review'])->name('image-create-review');

@@ -53,6 +53,12 @@
                         </div>
                         <div class="Container__Childern">
                         <div class="Title">
+            Title:
+       </div>
+        <input class="Input__Text" type="text" name="title" placeholder="Tieu de">
+                        </div>
+                        <div class="Container__Childern">
+                        <div class="Title">
             Type:
        </div>
         <input class="Input__Text" type="text" name="type" placeholder="Chủ đề">

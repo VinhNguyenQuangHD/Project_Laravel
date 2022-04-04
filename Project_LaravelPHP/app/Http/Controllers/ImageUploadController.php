@@ -24,6 +24,7 @@ class ImageUploadController extends Controller
             $req->file->store('image','public');
             $image = new Image();
             $image->image = $req->file->hashName();
+            $image->title = $req->title;
             $image->owner = $req->owner;
             $image->date = date('d-m-Y');
             $image->type = $req->type;
