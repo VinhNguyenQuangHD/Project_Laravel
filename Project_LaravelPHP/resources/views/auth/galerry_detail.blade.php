@@ -9,9 +9,17 @@
 <body>
         <h1>Hinh anh</h1>
         <img src="/storage/image/{{$image['image']}}" alt="hinh anh">
+        <input type="hidden" name="title" value="{{$image['title']}}">
         <h3>{{$image['title']}}</h3>
         <h3>{{$image['owner']}}</h3>
         <h4>{{$image['date']}}</h4>
     <a href="/review/{{$image['id']}}">Write review in here</a>
+        <h1>Comments list</h1>
+        @foreach($comment as $value)
+        <tbody>
+            <th>{{$value['user']}}</th>
+            <th>{{$value['content']}}</th>
+        </tbody>
+        @endforeach
 </body>
 </html>

@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    public function view_current_image($id){
+    public function view_current_image($id, Request $req){
         $data = Image::find($id);
-        return view('auth.galerry_detail',['image' => $data]);
+        $image_title = $req-> title;
+        $searching = ReviewImage::where('title','like','%'.$image_title.'%')->get();
+        return view('auth.galerry_detail',['image' => $data],['comment' => $searching]);
     }
 
     public function open_review_form($id){
