@@ -53,8 +53,7 @@ class AccountController extends Controller
             return back() -> with('fail', 'Error detected !!');
         }else{
             if(Hash::check($req -> password, $user_infor -> password)){
-                $req -> session() -> put('LogUser', $user_infor -> id);
-                
+                $req -> session() -> put('LogUser', $user_infor -> id); 
                 $data =  Account::find($user_infor -> id);
                 $data2 = Image::all();
                 return view('auth.main_page',['account' => $data],['images' => $data2]);
