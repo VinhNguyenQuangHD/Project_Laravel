@@ -113,15 +113,7 @@
     </head>
     <body>
     <input hidden name="id" value="{{$profile['id']}}">
-        <header>
-            <a href="main" class="logo">LOGO</a>
-            <ul>
-                <a href="profile">PROFILE</a>
-                <a href="#" class="active">GALLERY</a>
-                <a href="#">ABOUT</a>
-                <a href="#">CREDIT</a>
-            </ul>
-        </header>
+        @include('headerfooter.profile_header')
         <section class="about">
             <div class="main">
                 <img src="https://as1.ftcdn.net/v2/jpg/02/69/35/10/1000_F_269351065_s8XkbMlVAj4leu14hjMhwJ6qaWaCT4yB.jpg" alt="Anh dai dien">

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang cua quan tri vien</title>
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
             *{
@@ -105,46 +104,14 @@
     </style>
 </head>
 <body>
-    @include('headerfooter.admin_header')
-    <section>
-        <div class="container">
-            <div class="box-nav d-flex justify-between">
-                <a href="admin-create" class="border-shadow">
-                    <span class="text-gradient">New User <i class="fas fa-user"></i></span>
-                </a>
-            </div>
-            <form action="" method="">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Social Link</th>
-                            <th>Ages</th>
-                            <th>Types</th>
-                            <th>Update/Delete</th>
-                        </tr>
-                    </thead>
-                    @foreach($profiles as $value)
-                        <tbody>
-                            <th>{{$value['username']}}</th>
-                            <th>{{$value['email']}}</th>
-                            <th>{{$value['socialnetwork']}}</th>
-                            <th>{{$value['ages']}}</th>
-                            <th>{{$value['type']}}</th>
-                            <th><a href="admin-update/{{$value['id']}}">Update</a></th>
-                            <th><a href="admin-delete/{{$value['id']}}">Delete</a></th>
-                        </tbody>
-                    @endforeach
-
-                    <tbody>
-                    
-                    </tbody>
-                </table>
-            </form>
-        </div>
-    
-    </section>
-        
+<header>
+        <a href="main" class="logo">LOGO</a>
+            <ul>
+                <a href="">IMAGE MANAGER</a>
+                <a href="#" class="active"></a>
+                <a href="#">ABOUT</a>
+                <a href="#">CREDIT</a>
+            </ul>
+    </header>
 </body>
 </html>

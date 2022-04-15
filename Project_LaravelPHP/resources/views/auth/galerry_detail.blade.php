@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picture Detail</title>
+    
 </head>
 <body>
         <h1>Hinh anh</h1>
@@ -13,7 +14,7 @@
         <h3>{{$image['title']}}</h3>
         <h3>{{$image['owner']}}</h3>
         <h4>{{$image['date']}}</h4>
-    <a href="/review/{{$image['id']}}">Write review in here</a>
+    @include('auth.review')
         <h1>Comments list</h1>
         @foreach($comment as $value)
         <tbody>

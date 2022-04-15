@@ -14,6 +14,7 @@ class GaleryController extends Controller
 
         $username = $req->username;
         $data2 = Image::where('owner','like','%'.$username.'%')->get();
-        return view('auth.galery',['galery' => $data],['datas' => $data2]);
+        return view('auth.galery',['account' => $data],['datas' => $data2]);
     }
+
 }

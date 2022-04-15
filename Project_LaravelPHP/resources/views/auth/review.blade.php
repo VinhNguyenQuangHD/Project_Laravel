@@ -21,6 +21,7 @@
             <input type="text" name="user">
             <h4>Content</h4>
             <textarea name="content" id="" cols="150" rows="10"></textarea>
+            <br>
             <button>Comment</button>
     </form>
 </body>

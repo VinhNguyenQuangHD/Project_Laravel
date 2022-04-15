@@ -234,12 +234,12 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="/storage/img/img1.png" alt="hình nền">
+			<img src="/storage/image_web/img1.png" alt="hình nền">
 		</div>
 		<div class="login-content">
 			<form action="{{route('login-progress')}}" method="POST">
                 
-				<img src="/storage/img/imgprofile.png" alt="hình đại diện">
+				<img src="/storage/image_web/imgprofile.png" alt="hình đại diện">
 				<h2 class="title">Login</h2>
                 @if(Session::get('fail'))
                 <h1 >{{Session::get('fail')}}</h1>

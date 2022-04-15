@@ -17,9 +17,9 @@
     </header>
     <div class="favorite">
             <div class="title">
-                <h1>Favorite Library of {{$galery['username']}}</h1>
+                <h1>Favorite Library of {{$account['username']}}</h1>
                 <form action="" method="">
-                <input type="hidden" name="name" value="{{$galery['username']}}">
+                <input type="hidden" name="name" value="{{$account['username']}}">
                     <div class="container">
                         @foreach($datas as $data)
                             <div class="card">

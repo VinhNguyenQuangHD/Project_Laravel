@@ -235,16 +235,12 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-<<<<<<< Updated upstream
-            <img src="/storage/img/registerimg.png" alt="hinh anh"/>
-=======
-            <img src="{{URL('img/img1.png')}}" alt=""/>
->>>>>>> Stashed changes
+            <img src="/storage/image_web/registerimg.png" alt="hinh anh"/>
 		</div>
 		<div class="login-content">
 			<form action="{{route('register-progress')}}" method="POST">
                 
-				<img src="storage/img/imgprofile.png">
+				<img src="/storage/image_web/imgprofile.png">
 				<h2 class="title">Register</h2>
                 @if(Session::get('success'))
                 <h1 >{{Session::get('success')}}</h1>
