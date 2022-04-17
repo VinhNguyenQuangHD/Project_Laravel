@@ -20,7 +20,21 @@
             <img src="/storage/image_web/mountains_front.png" alt="img" id="mountains_front">
         </section>
         <div class="sec">
-            <h3>Every thing is under here !!!</h3>
+        <h2>Searching author of image</h2>
+        <br>
+            <div class="search-form">
+                    <div class="search">
+                        
+                        <div class="icon">
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="Searching..." id="mysearch">
+                        </div>
+                        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                    </div>
+            </div>
+            <br>
+            <h2>Every thing is under here !!!</h2>
             <p>Pick what you want :) !!!</p>
             <div class="container">
                 <div class="row">
@@ -31,7 +45,7 @@
                             <h2><span>{{$value['owner']}}</span></h2>
                             <p>{{$value['date']}}</p>
                             <div class="more">
-                                <a href="image/{{$value['id']}}" class="read-more">More information</a>
+                                <a href="/image/{{$value['id']}}" class="read-more">More information</a>
                                 <div class="icon-link">
                                     <a href="#"><i class="fas fa-heart"></i></a>
                                     <a href="#"><i class="fas fa-paperclip"></i></a>
@@ -42,7 +56,7 @@
                     </div>
                     @endforeach
                 </div>
-                
+                @include('headerfooter.footer')
             </div>
         </div>
 
@@ -65,6 +79,13 @@
                 btn.style.marginTop = value*1.5+'px';
                 header.style.top = value*0.5+'px';
             })
+
+
+            const icon = document.querySelector('.icon');
+            const search = document.querySelector('.search');
+            icon.onclick = function(){
+                search.classList.toggle('active')
+            }
         </script>
     </body>
 </html>

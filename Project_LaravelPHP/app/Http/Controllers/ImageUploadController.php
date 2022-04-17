@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Image;
 use App\Models\Profile;
+use App\Models\Title;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +13,8 @@ class ImageUploadController extends Controller
 {
     public function view_upload_form(){
         $date = date('d-m-Y');
-        return view('auth.upload_img',['date' => $date]);
+        $data = Title::all();
+        return view('auth.upload_img',['date' => $date],['data' => $data]);
     }
 
    

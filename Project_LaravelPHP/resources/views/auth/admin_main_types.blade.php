@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cua quan tri vien</title>
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
             *{
@@ -104,14 +105,40 @@
     </style>
 </head>
 <body>
-<header>
-        <a href="/admin" class="logo">ADMIN PAGE</a>
-            <ul>
-                <a href="/admin-image">IMAGE MANAGER</a>
-                <a href="/admin-type" class="active">TYPE</a>
-                <a href="#">ABOUT</a>
-                <a href="#">CREDIT</a>
-            </ul>
-    </header>
+    @include('headerfooter.admin_header')
+    <section>
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/add-new-type" class="border-shadow">
+                    <span class="text-gradient">New image type <i class="fas fa-user"></i></span>
+                </a>
+            </div>
+            <form action="" method="">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Types</th>
+                            <th>Update/Delete</th>
+                        </tr>
+                    </thead>
+                    @foreach($types as $value)
+                        <tbody>
+                            <th>{{$value['id']}}</th>
+                            <th>{{$value['title_description']}}</th>
+                            <th><a href="/admin-type-update/{{$value['id']}}">Update</a></th>
+                            <th><a href="/admin-delete-type/{{$value['id']}}">Delete</a></th>
+                        </tbody>
+                    @endforeach
+
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    
+    </section>
+        
 </body>
 </html>

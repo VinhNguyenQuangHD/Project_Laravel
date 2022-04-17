@@ -27,6 +27,7 @@
 
 <div>
 
+
 <form action="{{ route('upload-image') }}" method="post" enctype="multipart/form-data">
                 @if(Session::get('success'))
                 <h1 >{{Session::get('success')}}</h1>
@@ -61,7 +62,11 @@
                         <div class="Title">
             Type:
        </div>
-        <input class="Input__Text" type="text" name="type" placeholder="Chủ đề">
+       <select name="type" id="">
+           @foreach($data as $row)
+           <option value="{{$row['id']}}">{{$row['title_description']}}</option>
+           @endforeach
+       </select>
                         </div>
                         <div class="Container__Childern">
                         <input type="submit" value="Submit">

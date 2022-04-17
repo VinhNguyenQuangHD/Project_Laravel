@@ -19,6 +19,7 @@
                 @csrf
         
         <input hidden name="id" value="{{$profile['id']}}">
+        <input hidden name="password" value="{{$profile['password']}}">
         <div class="form__ChangeInf">
             <div class="form__Content">
                 <div class="Title__Form">

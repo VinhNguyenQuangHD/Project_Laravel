@@ -1,0 +1,5 @@
+body {height: 100vh;box-sizing: content-box;background: linear-gradient(160deg, #1c0522, #1c0522c7);width: 100%;margin: 0px;}
+
+a#Add--new__type {color: white;text-decoration: none;position: absolute;transition: 0.5s;/* background: aliceblue; */padding: 5px 10px 5px 10px;font-size: 20px;top: 4%;left: 90%;border-radius: 30px;}
+
+a#Add--new__type:hover {background: white;color: black;border-radius: 50px;}

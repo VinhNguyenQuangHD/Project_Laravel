@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Image;
+use App\Models\Like;
 use App\Models\ReviewImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
@@ -17,7 +20,7 @@ class ImageController extends Controller
 
     public function open_review_form($id){
         $data = Image::find($id);
-    return view('auth.review', ['image'=> $data]);
+        return view('auth.review', ['image'=> $data]);
     }
 
     public function upload_review(Request $req){

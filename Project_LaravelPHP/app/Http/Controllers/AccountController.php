@@ -34,6 +34,9 @@ class AccountController extends Controller
         $acc -> username = $req -> username;
         $acc -> email = $req -> email;
         $acc -> password = Hash::make($req -> password) ;
+        $acc -> ages = "None";
+        $acc -> socialnetwork = "None";
+        $acc -> type = "None";
         $res = $acc->save();
         if($res){
             return back()-> with('success','Complete');
@@ -64,5 +67,13 @@ class AccountController extends Controller
             }
             
         }
+    }
+
+    public function my_images($id, Request $req){
+        $data = Account::find($id);
+
+        $username = $req->username;
+        $data2 = Image::where('owner','like','%'.$username.'%')->get();
+        return view('auth.galery',['account' => $data],['datas' => $data2]);
     }
 }

@@ -56,7 +56,7 @@
 </head>
 <body>
         <header>
-            <a href="main" class="logo">LOGO</a>
+            <a href="#" class="logo">LOGO</a>
             <ul>
                 <a href="profile/{{$account['id']}}">{{$account['username']}}</a>
                 <a href="galery/{{$account['id']}}" class="active">GALERRY</a>

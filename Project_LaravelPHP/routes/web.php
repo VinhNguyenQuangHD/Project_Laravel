@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdminImageController;
+use App\Http\Controllers\AdminTypesController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\LikeShareController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +48,22 @@ Route::get('/galery/{id}',[GaleryController::class,'view_galerry']);
 Route::get('/image/{id}',[ImageController::class, 'view_current_image']);
 Route::get('/review/{id}',[ImageController::class,'open_review_form']);
 Route::post('/image-create-review',[ImageController::class,'upload_review'])->name('image-create-review');
+Route::get('/personal-collection/{id}', [GaleryController::class,'view_collection']);
+
+Route::get('/same-type/{id}',[GaleryController::class, 'display_same_type']);
+
+Route::get('/add-new-type',[GaleryController::class, 'display_add_type']);
+Route::post('/create-new-type',[GaleryController::class, 'add_new_type'])->name('create-new-type');
+
+Route::get('/like/{id}',[LikeShareController::class, 'like_form']);
+Route::post('/like',[LikeShareController::class, 'like_this_image'])->name('like');
+
+Route::get('/admin-type',[AdminTypesController::class, 'display_admin_types']);
+Route::get('/admin-type-update/{id}',[AdminTypesController::class, 'admin_type_update_view']);
+Route::post('/admin-type-update',[AdminTypesController::class, 'update_types'])->name('admin-type-update');
+Route::get('/admin-delete-type/{id}',[AdminTypesController::class,'types_delete']);
+
+Route::get('/admin-image',[AdminImageController::class,'view_all']);
+Route::get('/admin-image-update/{id}',[AdminImageController::class, 'admin_update_image_view']);
+Route::post('/admin-image-update',[AdminImageController::class, 'update_image'])->name('admin-image-update');
+Route::get('/admin-delete-image/{id}',[AdminImageController::class,'image_delete']);

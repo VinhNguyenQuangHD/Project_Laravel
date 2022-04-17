@@ -118,12 +118,17 @@
             <div class="main">
                 <img src="https://as1.ftcdn.net/v2/jpg/02/69/35/10/1000_F_269351065_s8XkbMlVAj4leu14hjMhwJ6qaWaCT4yB.jpg" alt="Anh dai dien">
                 <div class="about_text">
-                    <h2>Ve ca nhan toi</h2>
+                    <h2>About myself</h2>
                     <h5>{{$profile['username']}}</h5>
                     <p>Email: {{$profile['email']}}</p>
                     <p>Social network link: {{$profile['socialnetwork']}}</p>
                     <p>Ages: {{$profile['ages']}}</p>
+                    <p>Joint : {{$profile['created_at']}}</p>
                     <a href="/admin-update/{{$profile['id']}}">Update profile</a>
+                    <br>
+                    <a href="/upload">Upload new image</a>
+                    <br>
+                    <a href="/galery/{{$profile['id']}}">View your collection</a>
                 </div>
             </div>
         </section>
