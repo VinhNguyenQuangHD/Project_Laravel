@@ -1,0 +1,249 @@
+body{
+    margin: 0px;
+    height:100%;
+    width: 100%;
+    background-size: cover;
+    /* background-image: url(../IMG/pexels-pixabay-357737.jpg); */
+}
+.Login {
+    margin-left: 50px;
+    top: 50px;
+    background: #00000082;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 30px;
+}
+
+.Title {
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 45px;
+    color: aliceblue;
+    font-family: system-ui;
+}
+.Email__Login {
+    position: relative;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+input.Email__Text {
+    border-style: none;
+    background: transparent;
+    outline: none;
+    padding-left: 25px;
+    margin: 15px 0px 15px 0px;
+    height: 40px;
+    font-size: 15px;
+    /* border-radius: 10px; */
+    border-bottom-style: solid;
+    color: white;
+}
+.Menu__Choice {
+    height: 100%;
+    width: 6%;
+    position: absolute;
+}
+
+.PassWord__Login {
+     font-size: 15px;
+     display: flex;
+     flex-direction: column;
+     color: white;
+}
+body img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+input.Password__Text {
+    transition: 0.5s ease;
+    border-style: none;
+    background: transparent;
+    outline: none;
+    padding-left: 25px;
+    margin: 15px 0px 15px 0px;
+    height: 40px;
+    font-size: 15px;
+    /* border-radius: 10px; */
+    border-bottom-style: solid;
+    color: white;
+}
+.Login__content {
+    height: 100%;
+    top: 11px;
+    width: 380px;
+    background: #000000ba;
+    position: relative;
+    /* height: 394px; */
+    left: 65%;
+    padding: 34px 34px 0px 30px;
+}
+
+h2 {
+    color: aliceblue;
+    margin: 0px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+input.Email__Text::-webkit-input-placeholder{
+    position: relative;
+    transition:0.5s ease;
+}
+input.Password__Text::-webkit-input-placeholder{
+    position: relative;
+    transition:0.5s ease;
+}
+
+input.Email__Text:focus::-webkit-input-placeholder{
+    opacity: 1;
+    color:#ff9f67;
+    visibility:visible;
+}
+input.Password__Text:focus::-webkit-input-placeholder{
+    opacity: 1;
+    color:#ff9f67;
+    visibility:visible;
+}
+
+
+.Submit__Login {padding-bottom: 32px;/* margin-bottom: 60px; */display: flex;justify-content: center;}
+
+input.Submit__Login--Click {
+    cursor: pointer;
+    transition: 0.5s ease;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 30px;
+    width: 50%;
+    height: 45px;
+    font-size: 13px;
+    border-style: none;
+    box-shadow: 0px 0px 10px #67b8ff;
+    color: cornflowerblue;
+}
+
+a.Registrantion__Page {
+    transition: 0.5s ease;
+    position: relative;
+    text-decoration: auto;
+    color: aliceblue;
+    font-size: 15px;
+}
+
+.Registrantion {
+    height: 34px;
+    display: flex;
+    justify-content: end;
+}
+.Line--Move {
+    transform: 0.5s;
+    border-width: 1px;
+    position: absolute;
+    border-style: solid;
+    width: 100%;
+    /* color: aliceblue; */
+    top: 80%;
+    border-color: #ffa36c;
+    width: 0%;
+    opacity: 0;
+}
+input.Email__Text:focus {
+    transition: 0.5s ease;
+    border-color:#ffa36c;
+}
+input.Password__Text:focus{
+    transition: 0.5s ease;
+    border-color:#ffa36c;
+}
+input.Submit__Login--Click:hover {
+    width: 50%;
+    color: #4aff4a;
+    box-shadow: 0px 0px 12px #5eff5e;
+    background: #ffffff;
+}
+a.Registrantion__Page:hover {
+    position: relative;
+    margin-left: 0px;
+    text-shadow: 1px 1px #68f1689c;
+    color: #4ced4c;
+    font-size: 18px;
+    transition: 0.5 ease;
+}
+@media only screen and (max-width: 739px) {
+    .Title {
+        font-size: 25px;
+    }
+    
+    .Email__Login {
+        font-size: 20px;
+    }
+    
+    input.Email__Text {
+        font-size: 15px;
+    }
+    
+    .PassWord__Login {
+        font-size: 20px;
+    }
+    
+    input.Password__Text {
+        font-size: 14px;
+    }
+    
+    input.Submit__Login--Click {
+        font-size: 10px;
+    }
+    .Login {
+        margin: 0px;
+        width: 80%;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    
+    a.Registrantion__Page {
+        font-size: 16px;
+    }
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .Login {
+    height: 80%;
+    width: 40%;
+}
+
+.Title {
+    font-size: 30px;
+}
+
+.Email__Login {
+    font-size: 21px;
+}
+
+input.Email__Text {
+    font-size: 15px;
+}
+
+.PassWord__Login {
+    font-size: 21px;
+}
+
+input.Password__Text {
+    font-size: 15px;
+}
+
+input.Submit__Login--Click {
+    font-size: 12px;
+    width: 55%;
+}
+}

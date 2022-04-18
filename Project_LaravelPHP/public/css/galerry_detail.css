@@ -1,0 +1,145 @@
+@import  url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+
+
+body {color: white;margin: 0px;padding: 0px 100px 0px 100px;background: linear-gradient(141deg, #1c0522, #1c0522c7);}
+
+
+
+
+.Container {display: flex;margin-top: 100px;}
+
+.Img__PRoduct {width: 60%;overflow: hidden;height: 60vh;}
+
+.Detail__Product {width: 30%;margin-left: 4%;line-height: 56px;}
+.Img__PRoduct img {width: 100%;height: 100%;}
+
+.Button__Custom--click {height: 35%;position: relative;display: flex;flex-direction: column;}
+
+.Button__Custom--click a {transition: 0.5s;height: 46px;background: aliceblue;text-decoration: none;position: absolute;padding: 10px;display: flex;align-items: center;box-shadow: 0px 0px 5px aliceblue;/* border-radius: 5px; */font-size: 1.2rem;color: blue;}
+
+.Button__Custom--click a:last-child {top: 50%;}
+
+.Button__Custom--click a:first-child {width: 70px;display: flex;justify-content: center;height: 30px;}
+.Button__Custom--click a:hover {background: #1ecbd2;transform: translateY(-5px);color: #b15913;border-radius: 10px;}
+
+button {transition: 0.5s;padding: 8px;margin: 10px 0px 10px 0px;cursor: pointer;width: 100px;background: burlywood;border: none;box-shadow: 3px 3px 7px azure;}
+
+button:hover {box-shadow: 3px 3px 7px beige;background: beige;transform: translateY(4px);}
+.comment__Container {margin: 20px 0px 20px 0px;background: #43306e75;width: 80%;display: flex;align-items: baseline;padding-left: 1%;}
+
+.Content__Pra {width: 70%;}
+
+.comment__Container h3 {width: 30%;}
+input[type="text"] {outline: none;}
+
+textarea {outline: none;/* font-size: 11px; */}
+
+
+
+.container{
+    margin: 30px;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.image{
+    background: #50A7FF;
+    position: relative;
+    flex: 1;
+    max-width: 460px;
+    height: 300px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.image img{
+    opacity: 0.8;
+    position: relative;
+    vertical-align: top;
+    transition: 0.6s;
+    transition-property: opacity;
+}
+
+.image:hover img{
+    opacity: 1;
+}
+
+.image .details{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.image .details h2{
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 70px;
+    transition: 0.4s;
+    transition-property: transform;
+}
+.image .details h2 span{
+    font-weight: 900;
+}
+.image:hover .details h2{
+    transform: translateY(-30px);
+}
+.image .details p{
+    margin: 30px 30px 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s;
+    transition-property: opacity, transform;
+}
+
+.image:hover .details p{
+    opacity: 1;
+    transform: translateY(-40px);
+}
+
+.more{
+    position: absolute;
+    background: rgba(255,255,255,1);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    bottom: -60px;
+    transition: 0.6s;
+    transition-property: bottom;
+}
+.image:hover .more{
+    bottom: 0;
+}
+
+.more .read-more{
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.more .read-more span{
+    font-weight: 900;
+}
+
+.more .icon-link i{
+    color: #000;
+    font-size: 20px;
+
+}
+.more .icon-link a:not(:last-child) i{
+    margin-right: 20px;
+}
